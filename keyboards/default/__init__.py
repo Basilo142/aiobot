@@ -1,0 +1,1 @@
+from .key_gogo import gogo
