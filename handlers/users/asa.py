@@ -1,26 +1,38 @@
 import logging
 
 from aiogram import types
-from aiogram.dispatcher.filters.builtin import Command, Text
+from aiogram.dispatcher.filters.builtin import Command, Text, CommandStart
 from aiogram.types import ReplyKeyboardRemove, CallbackQuery
 
-from keyboards.default import gogo
+from keyboards.default import gogo, check_payment
 from keyboards.inline.callback_data import buy_callback
 from keyboards.inline.key_inline import inline_buttons, drugaya_key
 from loader import dp
 
 
-@dp.message_handler(Command('gogo'))
+@dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    await message.answer(f"gogo, {message.from_user.full_name}!", reply_markup=gogo)
+    await message.answer(f"Привет, {message.from_user.full_name}!", reply_markup=gogo)
 
 
-@dp.message_handler(text='first but')
+# @dp.message_handler(Command('gogo'))
+# async def bot_start(message: types.Message):
+#     await message.answer(f"gogo, {message.from_user.full_name}!", reply_markup=gogo)
+
+
+@dp.message_handler(text='Rashod')
 async def answer_first(message: types.Message):
-    await message.answer('вы нажали первую кнопку')
+    logging.info('вы нажали первую кнопку-{}'.format(message))
+    await message.answer('вы нажали первую кнопку', reply_markup=check_payment)
 
 
-@dp.message_handler(Text(equals=['Prihod', 'Rashod']))
+@dp.message_handler(text='Back')
+async def answer_first(message: types.Message):
+    logging.info('вы нажали Back-{}'.format(message))
+    await message.answer('вы нажали первую кнопку', reply_markup=gogo)
+
+
+@dp.message_handler(Text(equals=['Prihod']))
 async def answer_second(message: types.Message):
     await message.answer('FUCK_OFF - {}'.format(message.text), reply_markup=ReplyKeyboardRemove())
 

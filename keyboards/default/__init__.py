@@ -1,1 +1,1 @@
-from .key_gogo import gogo
+from .key_gogo import gogo, check_payment

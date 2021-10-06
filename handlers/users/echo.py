@@ -4,13 +4,13 @@ from filters import IsPrivate
 from loader import dp
 
 
-# # Эхо хендлер, куда летят текстовые сообщения без указанного состояния
-# @dp.message_handler(IsPrivate(), state=None)
-# async def bot_echo(message: types.Message):
-#     await message.answer(f"Эхо без состояния."
-#                          f"Сообщение:\n"
-#                          f"{message.text}")
-#     await message.reply('Текст принят')
+# Эхо хендлер, куда летят текстовые сообщения без указанного состояния
+@dp.message_handler(content_types=types.ContentTypes.STICKER | types.ContentTypes.ANIMATION)
+async def bot_echo(message: types.Message):
+    await message.answer(f"Эхо без состояния."
+                         f"Сообщение:\n"
+                         f"{message.text}")
+    await message.reply('Текст принят')
 #
 #
 # # Эхо хендлер, куда летят ВСЕ сообщения с указанным состоянием
