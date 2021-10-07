@@ -4,7 +4,7 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import Command, Text, CommandStart
 from aiogram.types import ReplyKeyboardRemove, CallbackQuery
 
-from keyboards.default import gogo, check_payment, keypad_start, keypad_prihod
+from keyboards.default import gogo, check_payment, keypad_start, keypad_prihod, keypad_rashod, keypad_permanent_spending
 from keyboards.inline.callback_data import buy_callback
 from keyboards.inline.key_inline import inline_buttons, drugaya_key
 from loader import dp
@@ -15,15 +15,9 @@ async def keyboard_start(message: types.Message):
     await message.answer('Привіт {}'.format(message.from_user.full_name), reply_markup=keypad_start)
 
 
-@dp.message_handler(text='Prihod')
-async def key_start_prihod(message: types.Message):
-    await message.answer('Тут треба вібрати від кого будуть поступати кошти:', reply_markup=keypad_prihod)
-
-
-@dp.message_handler(text='Rashod')
-async def key_start_rashod(message: types.Message):
-    await message.answer('Тут треба вібрати группу на яку були трати:')
-
+@dp.message_handler(text='Обязательные/постоянные')
+async def key_rashod_permanent(message: types.Message):
+    await message.answer('Тут треба вібрати конкретніше:', reply_markup=keypad_permanent_spending)
 
 
 # @dp.message_handler(CommandStart())
