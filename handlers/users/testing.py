@@ -1,3 +1,5 @@
+import logging
+
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Command
 from loader import dp
@@ -7,8 +9,14 @@ from states import Test
 
 
 @dp.message_handler(Command('test'), user_id=[370912284, 463061743])
-async def enter_test(message: types.Message):
+# @dp.message_handler(state=Test.Q1)
+async def enter_test(message: types.Message, state: FSMContext):
     await message.answer('test \nРеши задачку\n10 + 10 * 10 - 10 = ?\n')
+    answer = message.text
+    await state.update_data(answer1=answer)
+    data = await state.get_data()
+    answer1 = data.get('answer1')
+    await message.answer('answer1=== {}'.format(answer1))
 
     await Test.Q1.set()
 
@@ -35,7 +43,7 @@ async def answer_q2(message: types.Message, state: FSMContext):
     answer1 = data.get('answer1')
     answer2 = message.text
 
-    await message.answer(' get answer{} and {}'.format(answer1, answer2))
+    await message.answer(' get answer={} and ={}'.format(answer1, answer2))
 
     await state.finish()
     await state.reset_state(with_data=False)
