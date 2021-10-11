@@ -9,3 +9,4 @@ class Test(StatesGroup):
 class AddingData(StatesGroup):
     D1 = State()
     D2 = State()
+    Kvarplata = State()

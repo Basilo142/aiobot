@@ -17,7 +17,10 @@ def reading_data(ranges: list):  # ["Лист номер один!A2:F8"]
     result = SERVICE.spreadsheets().values().batchGet(spreadsheetId=SP_ID, ranges=ranges,
                                                       valueRenderOption='FORMATTED_VALUE',
                                                       dateTimeRenderOption='FORMATTED_STRING').execute()
-    sheet_values = int(result['valueRanges'][0]['values'][0][0])
+    try:
+        sheet_values = int(result['valueRanges'][0]['values'][0][0])
+    except KeyError:
+        sheet_values = 0
     return sheet_values
 
 

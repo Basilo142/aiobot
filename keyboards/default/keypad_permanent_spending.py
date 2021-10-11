@@ -36,7 +36,11 @@ keypad_permanent_spending = ReplyKeyboardMarkup(
             KeyboardButton(text='Spotify'),
         ], [
             KeyboardButton(text='Интернет'),
-        ],
+        ], [
+            KeyboardButton(text='Обеды в школу'),
+        ], [
+            KeyboardButton(text='Назад да стартового меню')
+        ]
     ],
 )
 
