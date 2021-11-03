@@ -7,7 +7,7 @@ keypad_prihod = ReplyKeyboardMarkup(
             KeyboardButton(text='Надходження\nСаша')
         ],
         [
-            KeyboardButton(text='Назад да стартового меню')
+            KeyboardButton(text='Назад до стартового меню')
         ]
     ],
 )

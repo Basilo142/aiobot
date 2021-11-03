@@ -77,6 +77,6 @@ async def adding_sasha(message: types.Message, state: FSMContext):
     await state.reset_state()
 
 
-@dp.message_handler(text='Назад да стартового меню')
+@dp.message_handler(text='Назад до стартового меню')
 async def key_prihod_back(message: types.Message):
     await message.answer(text='Back', reply_markup=keypad_start)

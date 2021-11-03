@@ -24,7 +24,7 @@ keypad_rashod = ReplyKeyboardMarkup(
             KeyboardButton(text='Другое '),
         ],
         [
-            KeyboardButton(text='Назад да стартового меню')
+            KeyboardButton(text='Назад до стартового меню')
         ]
     ],
 )

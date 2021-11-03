@@ -31,7 +31,7 @@ service = apiclient.discovery.build('sheets', 'v4', http=httpAuth)  # Выбир
 # ).execute()
 spreadsheetId = '1XeKFTCe7ZieVJ40h-jr6kGz8dH1K2IVoLJMAegXb0-8'
 sp2 = '1T0I1AWS17rVRiA9L9v5ckFFR2obKQFmGERjy91eo6YQ'
-results = service.spreadsheets().values().batchUpdate(spreadsheetId = sp2, body = {
+results = service.spreadsheets().values().batchUpdate(spreadsheetId=sp2, body={
     "valueInputOption": "USER_ENTERED",  # Данные воспринимаются, как вводимые пользователем (считается значение формул)
     "data": [
         {"range": "Март!B2:D5",

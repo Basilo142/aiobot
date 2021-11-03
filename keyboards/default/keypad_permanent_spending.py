@@ -39,7 +39,7 @@ keypad_permanent_spending = ReplyKeyboardMarkup(
         ], [
             KeyboardButton(text='Обеды в школу'),
         ], [
-            KeyboardButton(text='Назад да стартового меню')
+            KeyboardButton(text='Назад до стартового меню')
         ]
     ],
 )
