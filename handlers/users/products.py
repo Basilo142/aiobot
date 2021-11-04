@@ -33,7 +33,7 @@ async def adding_sum(message: types.Message, state: FSMContext):
     old_data = data.get('old_data')
     ranges_old = data.get('ranges_old')
     result = adding_data(ranges_old, difference)
-    await message.answer('Значение было изменено\nс {}\nна {}\nО_о а не много вы едите?))))'.format(old_data, result))
+    await message.answer('Значение было изменено\nс {}\nна {}\nО_о а не много ВЫ едите?))))'.format(old_data, result))
     await state.finish()
     await state.reset_state()
 
