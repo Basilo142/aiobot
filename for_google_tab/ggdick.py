@@ -42,7 +42,7 @@ results = service.spreadsheets().values().batchUpdate(spreadsheetId=sp2, body={
     ]
 }).execute()
 
-# ranges = ['Октябрь с 6.10!B1:B1']
+# ranges = ['Ноябрь 2021!B1:B1']
 # result = service.spreadsheets().values().batchGet(spreadsheetId=sp2, ranges=ranges,
 #                                                   valueRenderOption='FORMATTED_VALUE',
 #                                                   dateTimeRenderOption='FORMATTED_STRING').execute()

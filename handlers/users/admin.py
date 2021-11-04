@@ -25,9 +25,9 @@ async def key_start_rashod(message: types.Message):
 
 @dp.message_handler(text='Info')
 async def key_start_info(message: types.Message):
-    itog = reading_data(['Октябрь с 6.10!B1:B1'])
-    spend = reading_data(['Октябрь с 6.10!C7:C7'])
-    ostatok = reading_data(['Октябрь с 6.10!C5:C5'])
+    itog = reading_data(['Ноябрь 2021!B1:B1'])
+    spend = reading_data(['Ноябрь 2021!C7:C7'])
+    ostatok = reading_data(['Ноябрь 2021!C5:C5'])
     await message.answer('Информация по финансам\n'
                          'за текущий месяц\n'
                          'Итого приход:                     {} грн\n'
@@ -37,7 +37,7 @@ async def key_start_info(message: types.Message):
 
 @dp.message_handler(text='Надходження\nАнна', user_id=[463061743])
 async def key_prihod_anna(message: types.Message, state: FSMContext):
-    old_data = reading_data(['Октябрь с 6.10!B2:B2'])
+    old_data = reading_data(['Ноябрь 2021!B2:B2'])
     await message.answer('Укажите сумму поступлений:\n'
                          '(сумма указывается без копеек)\n'
                          'На данный момент в этом поле - {}'.format(old_data))
@@ -50,7 +50,7 @@ async def adding_anna(message: types.Message, state: FSMContext):
     difference = int(message.text)
     data = await state.get_data()
     old_data = data.get('old_data')
-    result = adding_data(['Октябрь с 6.10!B2:B2'], difference)
+    result = adding_data(['Ноябрь 2021!B2:B2'], difference)
     await message.answer('Значение было изменено\nс {}\n на {}'.format(old_data, result))
     await state.finish()
     await state.reset_state()
@@ -58,7 +58,7 @@ async def adding_anna(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text='Надходження\nСаша', user_id=[370912284])
 async def key_prihod_sasha(message: types.Message, state: FSMContext):
-    old_data = reading_data(['Октябрь с 6.10!C2:C2'])
+    old_data = reading_data(['Ноябрь 2021!C2:C2'])
     await message.answer('Укажите сумму поступлений:\n'
                          '(сумма указывается без копеек)\n'
                          'На данный момент в этом поле - {}'.format(old_data))
@@ -71,7 +71,7 @@ async def adding_sasha(message: types.Message, state: FSMContext):
     difference = int(message.text)
     data = await state.get_data()
     old_data = data.get('old_data')
-    result = adding_data(['Октябрь с 6.10!C2:C2'], difference)
+    result = adding_data(['Ноябрь 2021!C2:C2'], difference)
     await message.answer('Значение было изменено\nс {}\n на {}'.format(old_data, result))
     await state.finish()
     await state.reset_state()

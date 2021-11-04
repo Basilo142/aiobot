@@ -45,92 +45,92 @@ async def adding_kvarplata(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text='Квартплата')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C12:C12'], ranges_plan=['Октябрь с 6.10!B12:B12'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C12:C12'], ranges_plan=['Ноябрь 2021!B12:B12'])
 
 
 @dp.message_handler(text='Взнос в класс Соне')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C11:C11'], ranges_plan=['Октябрь с 6.10!B11:B11'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C11:C11'], ranges_plan=['Ноябрь 2021!B11:B11'])
 
 
 @dp.message_handler(text='Аренда')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C13:C13'], ranges_plan=['Октябрь с 6.10!B13:B13'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C13:C13'], ranges_plan=['Ноябрь 2021!B13:B13'])
 
 
 @dp.message_handler(text='Бензин Саша')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C14:C14'], ranges_plan=['Октябрь с 6.10!B14:B14'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C14:C14'], ranges_plan=['Ноябрь 2021!B14:B14'])
 
 
 @dp.message_handler(text='Проезд Аня')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C15:C15'], ranges_plan=['Октябрь с 6.10!B15:B15'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C15:C15'], ranges_plan=['Ноябрь 2021!B15:B15'])
 
 
 @dp.message_handler(text='Долг Аня')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C16:C16'], ranges_plan=['Октябрь с 6.10!B16:B16'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C16:C16'], ranges_plan=['Ноябрь 2021!B16:B16'])
 
 
 @dp.message_handler(text='Долг Саша')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C17:C17'], ranges_plan=['Октябрь с 6.10!B17:B17'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C17:C17'], ranges_plan=['Ноябрь 2021!B17:B17'])
 
 
 @dp.message_handler(text='Соне на обеды')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C19:C19'], ranges_plan=['Октябрь с 6.10!B19:B19'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C19:C19'], ranges_plan=['Ноябрь 2021!B19:B19'])
 
 
 @dp.message_handler(text='Обеды Аня')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C20:C20'], ranges_plan=['Октябрь с 6.10!B20:B20'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C20:C20'], ranges_plan=['Ноябрь 2021!B20:B20'])
 
 
 @dp.message_handler(text='Обеды Саша')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C21:C21'], ranges_plan=['Октябрь с 6.10!B21:B21'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C21:C21'], ranges_plan=['Ноябрь 2021!B21:B21'])
 
 
 @dp.message_handler(text='Мобильный Соня')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C22:C22'], ranges_plan=['Октябрь с 6.10!B22:B22'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C22:C22'], ranges_plan=['Ноябрь 2021!B22:B22'])
 
 
 @dp.message_handler(text='Мобильный Саша')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C23:C23'], ranges_plan=['Октябрь с 6.10!B23:B23'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C23:C23'], ranges_plan=['Ноябрь 2021!B23:B23'])
 
 
 @dp.message_handler(text='Мобильный Степан')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C24:C24'], ranges_plan=['Октябрь с 6.10!B24:B24'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C24:C24'], ranges_plan=['Ноябрь 2021!B24:B24'])
 
 
 @dp.message_handler(text='Мобильный Анна')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C25:C25'], ranges_plan=['Октябрь с 6.10!B25:B25'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C25:C25'], ranges_plan=['Ноябрь 2021!B25:B25'])
 
 
 @dp.message_handler(text='Youtube')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C26:C26'], ranges_plan=['Октябрь с 6.10!B26:B26'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C26:C26'], ranges_plan=['Ноябрь 2021!B26:B26'])
 
 
 @dp.message_handler(text='Spotify')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C27:C27'], ranges_plan=['Октябрь с 6.10!B27:B27'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C27:C27'], ranges_plan=['Ноябрь 2021!B27:B27'])
 
 
 @dp.message_handler(text='Интернет')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C28:C28'], ranges_plan=['Октябрь с 6.10!B28:B28'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C28:C28'], ranges_plan=['Ноябрь 2021!B28:B28'])
 
 
 @dp.message_handler(text='Обеды в школу')
 async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Октябрь с 6.10!C18:C18'], ranges_plan=['Октябрь с 6.10!B18:B18'])
+    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C18:C18'], ranges_plan=['Ноябрь 2021!B18:B18'])
 
 
 
