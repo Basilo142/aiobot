@@ -21,7 +21,7 @@ keypad_rashod = ReplyKeyboardMarkup(
             KeyboardButton(text='Одежда'),
         ],
         [
-            KeyboardButton(text='Другое '),
+            KeyboardButton(text='Другое'),
         ],
         [
             KeyboardButton(text='Назад до стартового меню')

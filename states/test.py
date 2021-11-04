@@ -10,3 +10,6 @@ class AddingData(StatesGroup):
     D1 = State()
     D2 = State()
     Kvarplata = State()
+    Products = State()
+    OtherText = State()
+    OtherInt = State()

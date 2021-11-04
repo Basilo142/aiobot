@@ -6,8 +6,11 @@ from aiogram.dispatcher.filters.builtin import Command, Text, CommandStart
 from aiogram.types import ReplyKeyboardRemove, CallbackQuery
 
 from for_google_tab import reading_data
-from for_google_tab.def_for_adding_or_reading import adding_data
-from keyboards.default import gogo, check_payment, keypad_start, keypad_prihod, keypad_rashod, keypad_permanent_spending
+from for_google_tab.def_for_adding_or_reading import adding_data, adding_other
+from keyboards.default import (
+    gogo, check_payment, keypad_start, keypad_prihod, keypad_rashod, keypad_permanent_spending, keypad_to_rest,
+    keypad_health_sports, keypad_the_beauty, keypad_clothes, keypad_other
+)
 from keyboards.inline.callback_data import buy_callback
 from keyboards.inline.key_inline import inline_buttons, drugaya_key
 from loader import dp
@@ -16,11 +19,35 @@ from states import AddingData
 
 @dp.message_handler(text='Обязательные/постоянные')
 async def key_rashod_permanent(message: types.Message):
-    await message.answer('Тут треба вібрати конкретніше:', reply_markup=keypad_permanent_spending)
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_permanent_spending)
 
 
-# @dp.message_handler(text='Квартплата')
-async def key_kvarplata(message: types.Message,  state: FSMContext, ranges_old, ranges_plan):
+@dp.message_handler(text='Отдых')
+async def key_keypad_to_rest(message: types.Message):
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_to_rest)
+
+
+@dp.message_handler(text='Здоровье/спорт')
+async def key_keypad_health_sports(message: types.Message):
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_health_sports)
+
+
+@dp.message_handler(text='Красота')
+async def key_keypad_the_beauty(message: types.Message):
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_the_beauty)
+
+
+@dp.message_handler(text='Одежда')
+async def key_keypad_clothes(message: types.Message):
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_clothes)
+
+
+@dp.message_handler(text='Другое')
+async def key_keypad_other(message: types.Message):
+    await message.answer('Тут треба вибрати конкретніше:', reply_markup=keypad_other)
+
+
+async def replacement_data(message: types.Message, state: FSMContext, ranges_old, ranges_plan):
     old_data = reading_data(ranges_old)
     plan_data = reading_data(ranges_plan)
     await message.answer('На сегодняшний день расход составляет - {}\n'
@@ -32,7 +59,7 @@ async def key_kvarplata(message: types.Message,  state: FSMContext, ranges_old, 
 
 
 @dp.message_handler(state=AddingData.Kvarplata)
-async def adding_kvarplata(message: types.Message, state: FSMContext):
+async def adding(message: types.Message, state: FSMContext):
     difference = int(message.text)
     data = await state.get_data()
     old_data = data.get('old_data')
@@ -44,142 +71,210 @@ async def adding_kvarplata(message: types.Message, state: FSMContext):
 
 
 @dp.message_handler(text='Квартплата')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C12:C12'], ranges_plan=['Ноябрь 2021!B12:B12'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C12:C12'], ranges_plan=['Ноябрь 2021!B12:B12'])
 
 
 @dp.message_handler(text='Взнос в класс Соне')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C11:C11'], ranges_plan=['Ноябрь 2021!B11:B11'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C11:C11'], ranges_plan=['Ноябрь 2021!B11:B11'])
 
 
 @dp.message_handler(text='Аренда')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C13:C13'], ranges_plan=['Ноябрь 2021!B13:B13'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C13:C13'], ranges_plan=['Ноябрь 2021!B13:B13'])
 
 
 @dp.message_handler(text='Бензин Саша')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C14:C14'], ranges_plan=['Ноябрь 2021!B14:B14'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C14:C14'], ranges_plan=['Ноябрь 2021!B14:B14'])
 
 
 @dp.message_handler(text='Проезд Аня')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C15:C15'], ranges_plan=['Ноябрь 2021!B15:B15'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C15:C15'], ranges_plan=['Ноябрь 2021!B15:B15'])
 
 
 @dp.message_handler(text='Долг Аня')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C16:C16'], ranges_plan=['Ноябрь 2021!B16:B16'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C16:C16'], ranges_plan=['Ноябрь 2021!B16:B16'])
 
 
 @dp.message_handler(text='Долг Саша')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C17:C17'], ranges_plan=['Ноябрь 2021!B17:B17'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C17:C17'], ranges_plan=['Ноябрь 2021!B17:B17'])
 
 
 @dp.message_handler(text='Соне на обеды')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C19:C19'], ranges_plan=['Ноябрь 2021!B19:B19'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C19:C19'], ranges_plan=['Ноябрь 2021!B19:B19'])
 
 
 @dp.message_handler(text='Обеды Аня')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C20:C20'], ranges_plan=['Ноябрь 2021!B20:B20'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C20:C20'], ranges_plan=['Ноябрь 2021!B20:B20'])
 
 
 @dp.message_handler(text='Обеды Саша')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C21:C21'], ranges_plan=['Ноябрь 2021!B21:B21'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C21:C21'], ranges_plan=['Ноябрь 2021!B21:B21'])
 
 
 @dp.message_handler(text='Мобильный Соня')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C22:C22'], ranges_plan=['Ноябрь 2021!B22:B22'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C22:C22'], ranges_plan=['Ноябрь 2021!B22:B22'])
 
 
 @dp.message_handler(text='Мобильный Саша')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C23:C23'], ranges_plan=['Ноябрь 2021!B23:B23'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C23:C23'], ranges_plan=['Ноябрь 2021!B23:B23'])
 
 
 @dp.message_handler(text='Мобильный Степан')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C24:C24'], ranges_plan=['Ноябрь 2021!B24:B24'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C24:C24'], ranges_plan=['Ноябрь 2021!B24:B24'])
 
 
 @dp.message_handler(text='Мобильный Анна')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C25:C25'], ranges_plan=['Ноябрь 2021!B25:B25'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C25:C25'], ranges_plan=['Ноябрь 2021!B25:B25'])
 
 
 @dp.message_handler(text='Youtube')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C26:C26'], ranges_plan=['Ноябрь 2021!B26:B26'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C26:C26'], ranges_plan=['Ноябрь 2021!B26:B26'])
 
 
 @dp.message_handler(text='Spotify')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C27:C27'], ranges_plan=['Ноябрь 2021!B27:B27'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C27:C27'], ranges_plan=['Ноябрь 2021!B27:B27'])
 
 
 @dp.message_handler(text='Интернет')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C28:C28'], ranges_plan=['Ноябрь 2021!B28:B28'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C28:C28'], ranges_plan=['Ноябрь 2021!B28:B28'])
 
 
 @dp.message_handler(text='Обеды в школу')
-async def runn(message: types.Message,  state: FSMContext):
-    await key_kvarplata(message, state, ranges_old=['Ноябрь 2021!C18:C18'], ranges_plan=['Ноябрь 2021!B18:B18'])
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!C18:C18'], ranges_plan=['Ноябрь 2021!B18:B18'])
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+@dp.message_handler(text='Кафе')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!F11:F11'], ranges_plan=['Ноябрь 2021!G11:G11'])
+
+
+@dp.message_handler(text='Кино')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!F12:F12'], ranges_plan=['Ноябрь 2021!G12:G12'])
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+@dp.message_handler(text='Трени Аня')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!J11:J11'], ranges_plan=['Ноябрь 2021!K11:K11'])
+
+
+@dp.message_handler(text='Трени Степа')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!J12:J12'], ranges_plan=['Ноябрь 2021!K12:K12'])
+
+
+@dp.message_handler(text='Трени Саша')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!J13:J13'], ranges_plan=['Ноябрь 2021!K13:K13'])
+
+
+@dp.message_handler(text='Трени Соня')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!J14:J14'], ranges_plan=['Ноябрь 2021!K14:K14'])
+
+
+@dp.message_handler(text='Коктейль')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!J15:J15'], ranges_plan=['Ноябрь 2021!K15:K15'])
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+@dp.message_handler(text='Одежда Аня')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!S11:S11'], ranges_plan=['Ноябрь 2021!R11:R11'])
+
+
+@dp.message_handler(text='Одежда Саша')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!S12:S12'], ranges_plan=['Ноябрь 2021!R12:R12'])
+
+
+@dp.message_handler(text='Одежда Соня')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!S13:S13'], ranges_plan=['Ноябрь 2021!R13:R13'])
+
+
+@dp.message_handler(text='Одежда Степан')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!S14:S14'], ranges_plan=['Ноябрь 2021!R14:R14'])
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+@dp.message_handler(text='Маникюр')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!W11:W11'], ranges_plan=['Ноябрь 2021!V11:V11'])
+
+
+@dp.message_handler(text='брови')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!W12:W12'], ranges_plan=['Ноябрь 2021!V12:V12'])
+
+
+@dp.message_handler(text='краска')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!W13:W13'], ranges_plan=['Ноябрь 2021!V13:V13'])
+
+
+@dp.message_handler(text='депиляшка')
+async def run(message: types.Message, state: FSMContext):
+    await replacement_data(message, state, ranges_old=['Ноябрь 2021!W14:W14'], ranges_plan=['Ноябрь 2021!V14:V14'])
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+@dp.message_handler(text='Что-то совсем другое)')
+async def run(message: types.Message, state: FSMContext):
+    await message.answer('Укажи на что портачино (text):')
+    await AddingData.OtherText.set()
+
+
+@dp.message_handler(state=AddingData.OtherText)
+async def other_text(message: types.Message, state: FSMContext):
+    text = str(message.text)
+    await state.update_data(text=text)
+    await message.answer('Была указана следующая статья: \n"{}"'.format(text))
+    await message.answer('Теперь укажите сумму (грн):')
+    await AddingData.OtherInt.set()
+
+
+@dp.message_handler(state=AddingData.OtherInt)
+async def other_int(message: types.Message, state: FSMContext):
+    amount = int(message.text)
+    data = await state.get_data()
+    text = data.get('text')
+    adding_other(text, amount)
+    await message.answer('Внесенны следующие данные \nстатья расхода - {}\nсумма - {}'.format(text, amount))
+    await state.reset_state()
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# @dp.message_handler(CommandStart())
-# async def bot_start(message: types.Message):
-#     await message.answer(f"Привет, {message.from_user.full_name}!", reply_markup=gogo)
-
-
-# @dp.message_handler(Command('gogo'))
-# async def bot_start(message: types.Message):
-#     await message.answer(f"gogo, {message.from_user.full_name}!", reply_markup=gogo)
-
-
-@dp.message_handler(Command('inline'))
-async def inline_button(messasge: types.Message):
-    await messasge.answer(text='Выбери что тебе нужно :\n'
-                          'вот варианты: \n', reply_markup=inline_buttons)
-
-
-@dp.callback_query_handler(buy_callback.filter(item='1_first_inline'))
-async def ff(call: CallbackQuery, callback_data: dict):
-    await call.answer(cache_time=60)
-    logging.info('*** i tak callback - {}'.format(call.data))
-    logging.info('*** i tak callback_dict - {}'.format(callback_data))
-    await call.message.answer('*** i tak callback - {}'.format(call.data))
-    await call.message.answer('*** i tak callback_dict - {}'.format(callback_data),
-                              reply_markup=drugaya_key)
-
-
-@dp.callback_query_handler(text='cancel')
-async def cancel(call: CallbackQuery):
-    await call.answer('отмена', show_alert=True)
-    await call.message.edit_reply_markup()
 
