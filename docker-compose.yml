@@ -13,3 +13,6 @@ services:
     volumes:
       - .:/src
 
+networks:
+  botnet:
+    driver: bridge
