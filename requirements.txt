@@ -78,14 +78,14 @@ webencodings==0.5.1
 websocket-client==1.0.1
 widgetsnbextension==3.5.1
 
-aiogram~=2.14.3
+
 pytest~=6.2.4
 wer~=0.1.0
 imageio~=2.9.0
 opencv-python~=4.5.2.54
 scipy~=1.6.3
 Pillow~=8.2.0
-aiogram<3.0
+
 aiohttp==3.6.2
 aioredis<2.0
 python-dotenv
