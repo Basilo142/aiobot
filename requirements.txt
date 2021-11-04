@@ -79,7 +79,6 @@ webencodings==0.5.1
 websocket-client==1.0.1
 widgetsnbextension==3.5.1
 
-turtle~=0.0.1
 aiogram~=2.14.3
 pytest~=6.2.4
 wer~=0.1.0
