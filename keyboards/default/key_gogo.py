@@ -9,10 +9,7 @@ gogo = ReplyKeyboardMarkup(
             KeyboardButton(text='Prihod'),
             KeyboardButton(text='Rashod')
         ],
-    ],
-    # resize_keyboard=True,
-    # one_time_keyboard=True
-    input_field_placeholder='Hello World'
+    ]
 )
 check_payment = ReplyKeyboardMarkup(
     keyboard=[
@@ -23,7 +20,5 @@ check_payment = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Back')
         ],
-    ],
-    # resize_keyboard=True,
-    input_field_placeholder='check_payment'
+    ]
 )
