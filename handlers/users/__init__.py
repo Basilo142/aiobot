@@ -1,8 +1,9 @@
-from . import admin
-from . import asa
-from . import products
-from . import testing
-from . import help
-from . import start
-from . import echo
+from .admin import dp
+from .asa import dp
+from .products import dp
+from .testing import dp
+from .help import dp
+from .start import dp
+from .echo import dp
 
+__all__ = ["dp"]

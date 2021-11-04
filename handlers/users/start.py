@@ -1,7 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart, Command
 from aiogram.utils.deep_linking import get_start_link
-from filters import IsPrivate
+# from filters import IsPrivate
 from loader import dp
 
 
