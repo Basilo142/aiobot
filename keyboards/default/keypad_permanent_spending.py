@@ -3,13 +3,13 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 keypad_permanent_spending = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Квартплата'),
+            KeyboardButton(text='🛋 Квартплата'),
         ], [
-            KeyboardButton(text='Взнос в класс Соне'),
+            KeyboardButton(text='🏫 Взнос в класс Соне'),
         ], [
-            KeyboardButton(text='Аренда'),
+            KeyboardButton(text='🏠 Аренда'),
         ], [
-            KeyboardButton(text='Бензин Саша'),
+            KeyboardButton(text='🚙 Бензин Саша'),
         ], [
             KeyboardButton(text='Проезд Аня'),
         ], [

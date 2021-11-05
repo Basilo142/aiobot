@@ -70,22 +70,22 @@ async def adding(message: types.Message, state: FSMContext):
     await state.reset_state()
 
 
-@dp.message_handler(text='Квартплата')
+@dp.message_handler(text='🛋 Квартплата')
 async def run(message: types.Message, state: FSMContext):
     await replacement_data(message, state, ranges_old=['Ноябрь 2021!C12:C12'], ranges_plan=['Ноябрь 2021!B12:B12'])
 
 
-@dp.message_handler(text='Взнос в класс Соне')
+@dp.message_handler(text='🏫 Взнос в класс Соне')
 async def run(message: types.Message, state: FSMContext):
     await replacement_data(message, state, ranges_old=['Ноябрь 2021!C11:C11'], ranges_plan=['Ноябрь 2021!B11:B11'])
 
 
-@dp.message_handler(text='Аренда')
+@dp.message_handler(text='🏠 Аренда')
 async def run(message: types.Message, state: FSMContext):
     await replacement_data(message, state, ranges_old=['Ноябрь 2021!C13:C13'], ranges_plan=['Ноябрь 2021!B13:B13'])
 
 
-@dp.message_handler(text='Бензин Саша')
+@dp.message_handler(text='🚙 Бензин Саша')
 async def run(message: types.Message, state: FSMContext):
     await replacement_data(message, state, ranges_old=['Ноябрь 2021!C14:C14'], ranges_plan=['Ноябрь 2021!B14:B14'])
 
