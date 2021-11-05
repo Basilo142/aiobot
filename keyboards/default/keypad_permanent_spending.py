@@ -41,7 +41,7 @@ keypad_permanent_spending = ReplyKeyboardMarkup(
         ], [
             KeyboardButton(text='Назад до стартового меню')
         ]
-    ],
+    ], one_time_keyboard=True
 )
 
 
