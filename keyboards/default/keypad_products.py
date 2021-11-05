@@ -15,7 +15,7 @@ keypad_products = ReplyKeyboardMarkup(
         ], [
             KeyboardButton(text='Хоз. нужды'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
@@ -23,11 +23,11 @@ keypad_products = ReplyKeyboardMarkup(
 keypad_to_rest = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Кафе'),
+            KeyboardButton(text='☕️🍩 Кафе ☕️🍩'),
         ], [
-            KeyboardButton(text='Кино'),
+            KeyboardButton(text='🎞 Кино 🎞'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
@@ -35,17 +35,17 @@ keypad_to_rest = ReplyKeyboardMarkup(
 keypad_health_sports = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Трени Аня'),
+            KeyboardButton(text='🤸🏼 Трени Аня 🤸🏼'),
         ], [
-            KeyboardButton(text='Трени Степа'),
+            KeyboardButton(text='🤼‍♂️ Трени Степа 🤼‍♂️'),
         ], [
-            KeyboardButton(text='Трени Саша'),
+            KeyboardButton(text='🏋🏻‍♂️ Трени Саша 🏋🏻‍♂️'),
         ], [
-            KeyboardButton(text='Трени Соня'),
+            KeyboardButton(text='🧘🏻‍♂️ Трени Соня 🧘🏻‍♂️'),
         ], [
-            KeyboardButton(text='Коктейль'),
+            KeyboardButton(text='🥛 Коктейль 🥛'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
@@ -61,7 +61,7 @@ keypad_clothes = ReplyKeyboardMarkup(
         ], [
             KeyboardButton(text='Одежда Степан'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
@@ -77,7 +77,7 @@ keypad_the_beauty = ReplyKeyboardMarkup(
         ], [
             KeyboardButton(text='депиляшка'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
@@ -88,7 +88,7 @@ keypad_other = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Что-то совсем другое)'),
         ], [
-            KeyboardButton(text='Назад до стартового меню')
+            KeyboardButton(text='🔙 Назад до стартового меню')
         ]
     ], one_time_keyboard=True
 )
